@@ -1,4 +1,4 @@
-export type ApiResopnse = {
+export type ApiResponse = {
     success: boolean,
     data?: any,
     error?: {
