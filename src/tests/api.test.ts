@@ -1,4 +1,4 @@
-import { app } from '../app'
+import app from '../app'
 import { describe, expect, test } from '@jest/globals'
 import supertest from "supertest"
 import apiModel from '../schemas/api.schema'
@@ -59,7 +59,7 @@ describe("Testing POST /apis endpoint", () => {
     test("Incorrect title formatting", async () => {
         const response = await supertest(app).post('/api/v1/apis').send({
             "title": "",
-                "version": "1.0.0",
+            "version": "1.0.0",
             "baseUrl": "http://hugocortez.com"
         })
         expect(response.status).toBe(406)
@@ -71,7 +71,7 @@ describe("Testing POST /apis endpoint", () => {
     test("Incorrect version formatting", async () => {
         const response = await supertest(app).post('/api/v1/apis').send({
             "title": "Api Teste",
-                "version": "version 2",
+            "version": "version 2",
             "baseUrl": "http://hugocortez.com"
         })
         expect(response.status).toBe(406)
@@ -83,7 +83,7 @@ describe("Testing POST /apis endpoint", () => {
     test("Incorrect baseUrl formatting", async () => {
         const response = await supertest(app).post('/api/v1/apis').send({
             "title": "Api Teste",
-                "version": "1.0.0",
+            "version": "1.0.0",
             "baseUrl": "hugocortez.com"
         })
         expect(response.status).toBe(406)
