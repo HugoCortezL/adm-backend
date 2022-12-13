@@ -1,0 +1,784 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Api Design Master - API",
+    "description": "This is for my project of ADM",
+    "versiom": "1.0.0",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/apis": {
+      "get": {
+        "tags": [
+          "Api"
+        ],
+        "summary": "Get all apis",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Get all users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "title": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "version": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "baseUrl": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "isArchived": {
+                            "type": "boolean",
+                            "example": false
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "title": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "version": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "baseUrl": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "string"
+                          },
+                          "isArchived": {
+                            "type": "boolean",
+                            "example": false
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Api"
+        ],
+        "summary": "Create api",
+        "description": "",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "The api to be created",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Api Teste"
+                },
+                "version": {
+                  "type": "string",
+                  "example": "20.0.0"
+                },
+                "baseUrl": {
+                  "type": "string",
+                  "example": "http://hugocortez.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Api created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "title": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "version": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "baseUrl": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "isArchived": {
+                          "type": "boolean",
+                          "example": false
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "title": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "version": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "baseUrl": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "isArchived": {
+                          "type": "boolean",
+                          "example": false
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{id}": {
+      "get": {
+        "tags": [
+          "Api"
+        ],
+        "summary": "Get appi by id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Api",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Api"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Api"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "statusCode": {
+                          "type": "number",
+                          "example": 404
+                        },
+                        "message": {
+                          "type": "string",
+                          "example": "Invalid id"
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "statusCode": {
+                          "type": "number",
+                          "example": 404
+                        },
+                        "message": {
+                          "type": "string",
+                          "example": "Invalid id"
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Api"
+        ],
+        "summary": "Edit api",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "tags": [
+          "Api"
+        ],
+        "summary": "Delete api",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Api deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "statusCode": {
+                          "type": "number",
+                          "example": 404
+                        },
+                        "message": {
+                          "type": "string",
+                          "example": "Invalid id"
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "statusCode": {
+                          "type": "number",
+                          "example": 404
+                        },
+                        "message": {
+                          "type": "string",
+                          "example": "Invalid id"
+                        }
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Api": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Api Design"
+          },
+          "version": {
+            "type": "string",
+            "example": "1.0.1"
+          },
+          "baseUrl": {
+            "type": "string",
+            "example": "http://localhost:8080"
+          },
+          "description": {
+            "type": "string",
+            "example": "This is my first api design"
+          },
+          "isArchived": {
+            "type": "boolean",
+            "example": false
+          },
+          "resource": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "resource"
+              },
+              "$ref": "#/components/schemas/Resource"
+            }
+          },
+          "schema": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "schema"
+              },
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "enum": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "enum"
+              },
+              "$ref": "#/components/schemas/Enum"
+            }
+          }
+        },
+        "xml": {
+          "name": "Api"
+        }
+      },
+      "BodyRequest": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "example": "string"
+          },
+          "schemaId": {
+            "xml": {
+              "name": "schema"
+            },
+            "$ref": "#/components/schemas/Schema"
+          }
+        },
+        "xml": {
+          "name": "BodyRequest"
+        }
+      },
+      "Endpoint": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "example": "/users"
+          },
+          "httpMethod": {
+            "type": "string",
+            "enum": [
+              "GET",
+              "POST",
+              "PUT",
+              "DELETE",
+              "PATCH",
+              "OPTIONS",
+              "HEAD",
+              "TRACE",
+              "CONNECT"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "example": "string"
+          },
+          "bodyRequest": {
+            "xml": {
+              "name": "bodyrequest"
+            },
+            "$ref": "#/components/schemas/BodyRequest"
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "response"
+              },
+              "$ref": "#/components/schemas/Response"
+            }
+          },
+          "parameter": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "parameter"
+              },
+              "$ref": "#/components/schemas/Parameter"
+            }
+          }
+        },
+        "xml": {
+          "name": "Endpoint"
+        }
+      },
+      "Enum": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "string"
+          },
+          "options": {
+            "type": "array",
+            "example": [
+              "string"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "xml": {
+          "name": "Enum"
+        }
+      },
+      "Field": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "String",
+              "Number",
+              "Boolean",
+              "Enum",
+              "Schema"
+            ]
+          },
+          "enum": {
+            "xml": {
+              "name": "enum"
+            },
+            "$ref": "#/components/schemas/Enum"
+          },
+          "schema": {
+            "xml": {
+              "name": "schema"
+            },
+            "$ref": "#/components/schemas/Schema"
+          },
+          "nullable": {
+            "type": "boolean",
+            "example": false
+          },
+          "required": {
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "xml": {
+          "name": "Field"
+        }
+      },
+      "Parameter": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "string"
+          },
+          "description": {
+            "type": "string",
+            "example": "string"
+          },
+          "required": {
+            "type": "boolean",
+            "example": true
+          },
+          "from": {
+            "type": "string",
+            "enum": [
+              "Query",
+              "Path",
+              "Body",
+              "Header"
+            ]
+          }
+        },
+        "xml": {
+          "name": "Parameter"
+        }
+      },
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "string"
+          },
+          "description": {
+            "type": "string",
+            "example": "string"
+          },
+          "endpointId": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "endpoint"
+              },
+              "$ref": "#/components/schemas/Endpoint"
+            }
+          }
+        },
+        "xml": {
+          "name": "Resource"
+        }
+      },
+      "Response": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "example": "string"
+          },
+          "statusCode": {
+            "type": "string",
+            "example": "string"
+          },
+          "schemaId": {
+            "xml": {
+              "name": "schema"
+            },
+            "$ref": "#/components/schemas/Schema"
+          }
+        },
+        "xml": {
+          "name": "Response"
+        }
+      },
+      "Schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "xml": {
+                "name": "field"
+              },
+              "$ref": "#/components/schemas/Field"
+            }
+          }
+        },
+        "xml": {
+          "name": "Schema"
+        }
+      }
+    }
+  }
+}
