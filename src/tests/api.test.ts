@@ -1,7 +1,7 @@
-import { app } from '../../app'
+import { app } from '../app'
 import { describe, expect, test } from '@jest/globals'
 import supertest from "supertest"
-import apiModel from './api.schema'
+import apiModel from '../schemas/api.schema'
 
 describe("Testing GET /apis endpoint", () => {
 
@@ -22,7 +22,7 @@ describe("Testing GET /api/:id endpoint", () => {
         expect(response.status).toBe(404)
         expect(response.body.success).toBe(false)
         expect('error' in response.body).toBe(true)
-        expect(response.body.error.message).toBe("Invalid id")
+        expect(response.body.error.message).toBe("Do not exist an api with this id.")
     })
 
     test("Valid Id", async () => {

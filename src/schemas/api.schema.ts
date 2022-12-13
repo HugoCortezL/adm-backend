@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import resourceSchema from '../Resource/resource.schema'
-import schemaSchema from '../Schema/schema.schema'
-import enumSchema from '../Enum/enum.schema'
+import resourceModel from './resource.schema'
+import schemaModel from './schema.schema'
+import enumModel from './enum.schema'
 
 const apiSchema = new mongoose.Schema({
     title: {
@@ -28,21 +28,21 @@ const apiSchema = new mongoose.Schema({
     },
     resource: [
         {
-            type: resourceSchema.schema,
+            type: resourceModel.schema,
             ref: "Resource",
             required: false
         }
     ],
     schema: [
         {
-            type: schemaSchema.schema,
+            type: schemaModel.schema,
             ref: "Schema",
             required: false
         }
     ],
     enum: [
         {
-            type: enumSchema.schema,
+            type: enumModel.schema,
             ref: "Enum",
             required: false
         }

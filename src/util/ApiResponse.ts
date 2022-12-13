@@ -1,8 +1,8 @@
 export type ApiResponse = {
     success: boolean,
+    statusCode: number,
     data?: any,
     error?: {
-        statusCode: number,
         message: string
     }
 }

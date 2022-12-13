@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { From } from './Parameter'
+import { From } from '../models'
 
 const parameterSchema = new mongoose.Schema({
     name: {

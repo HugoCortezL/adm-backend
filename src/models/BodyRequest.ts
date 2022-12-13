@@ -1,5 +1,5 @@
 export type BodyRequest = {
-    id: string
+    _id: string
     description: string,
     schemaId: string
 }

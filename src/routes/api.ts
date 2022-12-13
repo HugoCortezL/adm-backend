@@ -1,5 +1,5 @@
 import express from 'express'
-import { ApiController } from '../components/Api/api.controller'
+import { ApiController } from '../controllers/api.controller'
 
 export const apiRouter = express.Router()
 const apiController = new ApiController()
@@ -84,7 +84,7 @@ apiRouter.post("/apis",
             }
         }
     */
-    apiController.create
+    apiController.insert
 )
 
 apiRouter.put("/api/:id",

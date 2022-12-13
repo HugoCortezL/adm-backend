@@ -1,6 +1,4 @@
-import { BodyRequest } from "../BodyRequest/BodyRequest"
-import { Parameter } from "../Parameter/Parameter"
-import {Response} from '../Response/Response'
+import { BodyRequest, Parameter, Response } from "./"
 
 export enum HttpMethod {
     GET = "GET",
@@ -15,7 +13,7 @@ export enum HttpMethod {
 }
 
 export type Endpoint = {
-    id: string,
+    _id: string,
     path: string,
     httpMethod: HttpMethod,
     description: string,

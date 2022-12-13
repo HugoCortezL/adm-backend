@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import fieldSchema from '../Field/field.schema'
+import fieldModel from './field.schema'
 
 const schemaSchema = new mongoose.Schema({
     name: {
@@ -8,7 +8,7 @@ const schemaSchema = new mongoose.Schema({
     },
     fields: [
         {
-            type: fieldSchema.schema,
+            type: fieldModel.schema,
             required: true
         }
     ]

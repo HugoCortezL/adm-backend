@@ -7,6 +7,7 @@ export enum FieldType {
 }
 
 export type Field = {
+    _id: string,
     name: string,
     type: FieldType,
     enum?: string,

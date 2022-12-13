@@ -1,5 +1,5 @@
 export type Response = {
-    id: string,
+    _id: string,
     description: string,
     statusCode: string,
     schemaId: string

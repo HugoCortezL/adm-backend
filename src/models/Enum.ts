@@ -1,5 +1,5 @@
 export type Enum = {
-    id: string,
+    _id: string,
     name: string,
     options: [string]
 }

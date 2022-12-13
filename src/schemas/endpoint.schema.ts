@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
-import { HttpMethod } from './Endpoint'
-import bodyRequestSchema  from '../BodyRequest/bodyRequest.schema'
-import responseSchema from '../Response/response.schema'
-import parameterSchema from '../Parameter/parameter.schema'
+import { HttpMethod } from '../models'
+import bodyRequestModel from './bodyRequest.schema'
+import responseModel from './response.schema'
+import parameterModel from './parameter.schema'
 
 const endpointSchema = new mongoose.Schema({
     path: {
@@ -19,18 +19,18 @@ const endpointSchema = new mongoose.Schema({
         required: true
     },
     bodyRequest: {
-        type: bodyRequestSchema.schema,
+        type: bodyRequestModel.schema,
         required: false
     },
     response: [
         {
-            type: responseSchema.schema,
+            type: responseModel.schema,
             required: true
         }
     ],
     parameter: [
         {
-            type: parameterSchema.schema,
+            type: parameterModel.schema,
             required: false
         }
     ]

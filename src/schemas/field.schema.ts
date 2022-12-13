@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { FieldType } from './Field'
+import { FieldType } from '../models/Field'
 
 const fieldSchema = new mongoose.Schema({
     name: {
